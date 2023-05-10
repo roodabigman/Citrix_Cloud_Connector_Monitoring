@@ -60,7 +60,7 @@ def get_bearer_token(clientid, clientsecret):
     content_type = 'application/json'
     data = {"clientId": clientid, "clientSecret": clientsecret}
     headers = {'content-type': content_type}
-    trusturl: str = "https://trust.citrixworkspacesapi.net/root/tokens/clients"
+    trusturl: str = "https://api-us.cloud.com/cctrustoauth2/root/tokens/clients"
 
     response: Response = requests.post(trusturl, json=data, headers=headers)
     if 200 <= response.status_code <= 299:
