@@ -111,11 +111,11 @@ CC_detailsv_list = []
 
 
 for z in [x['id'] for y in Connector_Types for x in query_workspace_api(
-        f"https://agenthub-eastus-release-a.citrixworkspacesapi.net/{customer_name}"
+        f"https://agenthub.citrixworkspacesapi.net/{customer_name}"
         f"/EdgeServers?extendedData=true&connectorType={y}",
         bearer_token, customer_name).json()]:
     CC_detailsv_dict = query_workspace_api(
-            f"https://agenthub-eastus-release-a.citrixworkspacesapi.net/{customer_name}"
+            f"https://agenthub.citrixworkspacesapi.net/{customer_name}"
             f"/EdgeServers/{z}",
             bearer_token, customer_name).json()
     CC_detailsv_list.append(EdgeServer(**CC_detailsv_dict))
